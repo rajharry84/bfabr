@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KT Mobile Car Clean | Mobile Car Cleaning in Southampton</title>
+
+    <meta name="description" content="KT Mobile Car Clean offers affordable mobile car cleaning in Southampton. Interior cleaning, exterior washing, full valet, and fast mobile service. Book via WhatsApp.">
+
+    <style>
+        :root {
+            --bg: #050814;
+            --bg-alt: #0b1020;
+            --card: #111729;
+            --accent: #1e90ff;
+            --accent-soft: rgba(30, 144, 255, 0.15);
+            --text: #f5f7ff;
+            --muted: #a5b0d0;
+            --danger: #ff4b5c;
+        }
+
+        body.light {
+            --bg: #f4f6fb;
+            --bg-alt: #ffffff;
+            --card: #ffffff;
+            --accent: #1e90ff;
+            --accent-soft: rgba(30, 144, 255, 0.12);
+            --text: #111827;
+            --muted: #6b7280;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #111729 0, var(--bg) 45%, #020308 100%);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* STICKY NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(14px);
+            background: linear-gradient(to right, rgba(5, 8, 20, 0.92), rgba(5, 8, 20, 0.85));
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 10px 20px;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: var(--muted);
+        }
+
+        .nav-link:hover {
+            color: var(--text);
+        }
+
+        /* DARK MODE TOGGLE */
+        .toggle {
+            width: 44px;
+            height: 24px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            padding: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .toggle-circle {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #facc15;
+            transform: translateX(0);
+            transition: transform 0.25s ease, background 0.25s ease;
+        }
+
+        body.light .toggle-circle {
+            transform: translateX(18px);
+            background: #0f172a;
+        }
+
+        /* HERO */
+        header {
+            position: relative;
+            padding: 70px 20px 60px;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 800px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hero-text {
+            animation: fadeUp 0.9s ease-out;
+        }
+
+        h1 {
+            font-size: clamp(2.4rem, 4vw, 3.2rem);
+            margin: 0 0 12px;
+        }
+
+        .hero-sub {
+            color: var(--muted);
+            max-width: 480px;
+            margin-bottom: 18px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-badge span {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #22c55e;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(22, 163, 74, 0.35);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 14px 30px rgba(22, 163, 74, 0.45);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 16px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            background: transparent;
+            color: var(--muted);
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .hero-meta {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .hero-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-meta span::before {
+            content: "•";
+            color: var(--accent);
+        }
+
+        .hero-image {
+            position: relative;
+            min-height: 220px;
+            animation: fadeUp 1s ease-out;
+        }
+
+        .hero-card {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            background: radial-gradient(circle at top left, #1e293b, #020617);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+            height: 100%;
+            min-height: 260px;
+        }
+
+        .hero-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+            filter: saturate(1.1);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent 55%);
+        }
+
+        .hero-tag {
+            position: absolute;
+            left: 14px;
+            bottom: 14px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            color: #e5e7eb;
+            font-size: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-tag span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #22c55e;
+        }
+
+        .hero-badge-top {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            font-size: 0.75rem;
+            color: #e5e7eb;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 40px 20px;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+        }
+
+        .section-sub {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        /* SCROLL ANIMATION */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* SERVICES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 14px;
+            padding: 18px 18px 16px;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        body.light .card {
+            box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 55%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-weight: 600;
+        }
+
+        .card-price {
+            font-weight: 600;
+            color: #38bdf8;
+            font-size: 0.95rem;
+        }
+
+        .card-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            color: #e5e7eb;
+            font-size: 0.9rem;
+        }
+
+        body.light .card-icon {
+            background: #e5e7eb;
+            color: #020617;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 8px 0 0;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .card ul li {
+            margin-bottom: 4px;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+        }
+
+        .card ul li::before {
+            content: "✓";
+            color: #22c55e;
+            font-size: 0.8rem;
+            margin-top: 2px;
+        }
+
+        /* WHY CHOOSE US */
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .pill {
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        /* AREAS + OPENING */
+        .two-col {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 800px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tag-block {
+            background: var(--card);
+            border-radius: 14px;
+            padding: 16px 18px;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .tag-block strong {
+            color: var(--text);
+        }
+
+        .tag-list {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            font-size: 0.8rem;
+        }
+
+        body.light .tag {
+            background: #e5e7eb;
+            color: #020617;
+        }
+
+        .hours-list {
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+
+        .hours-list div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        /* GALLERY */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        @media (max-width: 900px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #020617;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            opacity: 0.9;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .gallery-label {
+            position: absolute;
+            left: 8px;
+            bottom: 8px;
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            font-size: 0.75rem;
+            color: #e5e7eb;
+        }
+
+        /* BOOKING FORM */
+        .form-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 18px 18px 16px;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.7);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        @media (max-width: 700px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        input, select, textarea {
+            border-radius: 10px;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            padding: 8px 10px;
+            background: rgba(15, 23, 42, 0.9);
+            color: var(--text);
+            font-size: 0.9rem;
+            outline: none;
+            transition: border 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        body.light input,
+        body.light select,
+        body.light textarea {
+            background: #f9fafb;
+            color: #020617;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
+        }
+
+        textarea {
+            min-height: 70px;
+            resize: vertical;
+        }
+
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 6px;
+            font-size: 0.8rem;
+            color: var(--muted);
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .error {
+            color: var(--danger);
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+
+        /* REVIEWS */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .review-card {
+            background: var(--card);
+            border-radius: 14px;
+            padding: 14px 14px 12px;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .review-name {
+            margin-top: 6px;
+            font-size: 0.8rem;
+            color: var(--text);
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid rgba(148, 163, 184, 0.25);
+            padding: 18px 20px 26px;
+            margin-top: 30px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        /* FLOATING WHATSAPP BUTTON */
+        .floating-wa {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            width: 52px;
+            height: 52px;
+            border-radius: 999px;
+            background: #22c55e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 16px 35px rgba(22, 163, 74, 0.6);
+            z-index: 1200;
+            font-size: 1.4rem;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .floating-wa:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(22, 163, 74, 0.75);
+        }
+
+        /* KEYFRAMES */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+<nav>
+    <div class="nav-inner">
+        <div class="logo">KT MOBILE CAR CLEAN</div>
+        <div class="nav-right">
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#booking" class="nav-link">Booking</a>
+            <a href="#gallery" class="nav-link">Gallery</a>
+            <div class="toggle" id="themeToggle">
+                <div class="toggle-circle"></div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<header>
+    <div class="hero-inner">
+        <div class="hero-text">
+            <div class="hero-badge">
+                <span></span> Mobile car cleaning across Southampton
+            </div>
+            <h1>Professional mobile car cleaning — we come to you.</h1>
+            <p class="hero-sub">
+                Interior, exterior, or full clean at your home or workplace. Affordable, reliable, and fast mobile service across Southampton.
+            </p>
+            <div class="hero-actions">
+                <a class="btn-primary" href="https://wa.me/447498972651" target="_blank" rel="noopener">
+                    Book now on WhatsApp
+                </a>
+                <button class="btn-secondary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
+                    View booking form
+                </button>
+            </div>
+            <div class="hero-meta">
+                <span>Same‑day slots when available</span>
+                <span>Serving Southampton & nearby areas</span>
+                <span>Evening & weekend availability</span>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <div class="hero-card">
+                <img class="hero-photo" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Car being washed">
+                <div class="hero-overlay"></div>
+                <div class="hero-tag">
+                    <span></span> Mobile service • We come to you
+                </div>
+                <div class="hero-badge-top">
+                    From £8 exterior • From £10 interior
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="section-inner reveal">
+            <h2>Our services</h2>
+            <p class="section-sub">Choose the clean that suits your car. All services are carried out at your location.</p>
+
+            <div class="services-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Inside clean</div>
+                        <div class="card-price">£10–£12</div>
+                    </div>
+                    <div class="card-icon">🧼</div>
+                    <ul>
+                        <li>Full interior vacuum</li>
+                        <li>Dashboard, plastics & trims cleaned</li>
+                        <li>Windows cleaned inside</li>
+                        <li>Rubbish removed</li>
+                        <li>Seats & mats vacuumed</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Outside clean</div>
+                        <div class="card-price">£8–£10</div>
+                    </div>
+                    <div class="card-icon">🚿</div>
+                    <ul>
+                        <li>Pre‑rinse & snow foam</li>
+                        <li>Hand wash with safe products</li>
+                        <li>Wheel clean & tyre shine</li>
+                        <li>Windows cleaned outside</li>
+                        <li>Hand‑dried finish</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Inside & outside</div>
+                        <div class="card-price">£15–£20</div>
+                    </div>
+                    <div class="card-icon">✨</div>
+                    <ul>
+                        <li>Full interior & exterior clean</li>
+                        <li>Windows inside & out</li>
+                        <li>Wheels & tyres refreshed</li>
+                        <li>Great for regular maintenance</li>
+                        <li>Car left looking and feeling fresh</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pill-row" style="margin-top:18px;">
+                <div class="pill">All work carried out at your home or workplace</div>
+                <div class="pill">We bring everything needed</div>
+                <div class="pill">Message for larger vehicles or special requests</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY + AREAS + HOURS -->
+    <section>
+        <div class="section-inner two-col reveal">
+            <div>
+                <h2>Why choose KT Mobile Car Clean?</h2>
+                <p class="section-sub">A simple, reliable service focused on convenience, value, and quality results.</p>
+                <div class="pill-row">
+                    <div class="pill">Fully mobile — we come to you</div>
+                    <div class="pill">Affordable, clear pricing</div>
+                    <div class="pill">Fast response times</div>
+                    <div class="pill">Professional products</div>
+                    <div class="pill">Friendly, reliable service</div>
+                    <div class="pill">Evening & weekend availability</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="tag-block">
+                    <strong>Areas we cover</strong>
+                    <div class="tag-list">
+                        <span class="tag">Southampton</span>
+                        <span class="tag">Totton</span>
+                        <span class="tag">Shirley</span>
+                        <span class="tag">Portswood</span>
+                        <span class="tag">Bitterne</span>
+                        <span class="tag">Eastleigh</span>
+                        <span class="tag">Millbrook</span>
+                        <span class="tag">Redbridge</span>
+                        <span class="tag">Nearby areas</span>
+                    </div>
+                </div>
+
+                <div class="tag-block" style="margin-top:10px;">
+                    <strong>Opening times</strong>
+                    <div class="hours-list">
+                        <div><span>Mon–Thu</span><span>4pm – 7pm</span></div>
+                        <div><span>Fri</span><span>4pm – 7pm</span></div>
+                        <div><span>Sat–Sun</span><span>10am – 7pm</span></div>
+                    </div>
+                    <div style="margin-top:6px; font-size:0.8rem;">
+                        Message on WhatsApp for current availability and same‑day slots.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <div class="section-inner reveal">
+            <h2>Gallery</h2>
+            <p class="section-sub">A glimpse at the kind of results you can expect from a KT Mobile Car Clean visit.</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1610915529872-1c2a7a5f91e6?auto=format&fit=crop&w=800&q=80" alt="Car interior cleaned">
+                    <div class="gallery-label">Interior refresh</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=800&q=80" alt="Car exterior wash">
+                    <div class="gallery-label">Exterior wash</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=80" alt="Clean wheels and tyres">
+                    <div class="gallery-label">Wheels & tyres</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=80" alt="Car detailing">
+                    <div class="gallery-label">Detailing touches</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80" alt="Clean car parked">
+                    <div class="gallery-label">Ready to drive</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80" alt="Car wash foam">
+                    <div class="gallery-label">Snow foam wash</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <section id="booking">
+        <div class="section-inner reveal">
+            <h2>Booking form</h2>
+            <p class="section-sub">Send us your details and we’ll reply on WhatsApp to confirm a time and price.</p>
+
+            <div class="form-card">
+                <form id="bookingForm" novalidate>
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="name">Name</label>
+                            <input id="name" name="name" type="text" placeholder="Your name">
+                            <div class="error" id="nameError"></div>
+                        </div>
+                        <div class="field">
+                            <label for="phone">WhatsApp number</label>
+                            <input id="phone" name="phone" type="tel" placeholder="07...">
+                            <div class="error" id="phoneError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="location">Location (area)</label>
+                            <input id="location" name="location" type="text" placeholder="e.g. Shirley, Totton">
+                            <div class="error" id="locationError"></div>
+                        </div>
+                        <div class="field">
+                            <label for="carType">Car type</label>
+                            <select id="carType" name="carType">
+                                <option value="">Select car type</option>
+                                <option value="small">Small car</option>
+                                <option value="medium">Medium car</option>
+                                <option value="large">Large car / SUV</option>
+                                <option value="van">Van</option>
+                            </select>
+                            <div class="error" id="carTypeError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="service">Service</label>
+                            <select id="service" name="service">
+                                <option value="">Select service</option>
+                                <option value="inside">Inside clean</option>
+                                <option value="outside">Outside clean</option>
+                                <option value="inout">Inside & outside</option>
+                            </select>
+                            <div class="error" id="serviceError"></div>
+                        </div>
+                        <div class="field">
+                            <label for="date">Preferred day</label>
+                            <input id="date" name="date" type="text" placeholder="e.g. Saturday afternoon">
+                            <div class="error" id="dateError"></div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="notes">Anything else we should know?</label>
+                        <textarea id="notes" name="notes" placeholder="e.g. pet hair, very dirty, parking details..."></textarea>
+                    </div>
+
+                    <div class="form-footer">
+                        <div>We’ll reply on WhatsApp to confirm availability and price.</div>
+                        <button type="submit" class="btn-primary">Send booking details</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section>
+        <div class="section-inner reveal">
+            <h2>Customer reviews</h2>
+            <p class="section-sub">Real feedback from customers who’ve used KT Mobile Car Clean.</p>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    “Brilliant service, car looks brand new. Arrived on time and worked quickly. Will definitely book again.”
+                    <div class="review-name">Sarah — Southampton</div>
+                </div>
+                <div class="review-card">
+                    “Fast, friendly and great value. Perfect for getting the car sorted after a busy week.”
+                    <div class="review-name">Ahmed — Shirley</div>
+                </div>
+                <div class="review-card">
+                    “Highly recommend. Came to my house, did inside and outside, and the car looked amazing afterwards.”
+                    <div class="review-name">James — Totton</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div>© KT Mobile Car Clean — Mobile car cleaning in Southampton and surrounding areas.</div>
+        <div>WhatsApp: <strong>07498 972 651</strong></div>
+    </div>
+</footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a class="floating-wa" href="https://wa.me/447498972651" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    💬
+</a>
+
+<script>
+    // THEME TOGGLE
+    const body = document.body;
+    const toggle = document.getElementById('themeToggle');
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('kt-theme');
+    if (savedTheme === 'light') {
+        body.classList.add('light');
+    }
+
+    toggle.addEventListener('click', () => {
+        body.classList.toggle('light');
+        localStorage.setItem('kt-theme', body.classList.contains('light') ? 'light' : 'dark');
+    });
+
+    // SCROLL REVEAL
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // BOOKING FORM HANDLING
+    const form = document.getElementById('bookingForm');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const fields = ['name', 'phone', 'location', 'carType', 'service', 'date'];
+        let valid = true;
+
+        fields.forEach(id => {
+            const input = document.getElementById(id);
+            const errorEl = document.getElementById(id + 'Error');
+            if (!input.value.trim()) {
+                errorEl.textContent = 'Please fill this field.';
+                valid = false;
+            } else {
+                errorEl.textContent = '';
+            }
+        });
+
+        if (!valid) return;
+
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const location = document.getElementById('location').value.trim();
+        const carType = document.getElementById('carType').value;
+        const service = document.getElementById('service').value;
+        const date = document.getElementById('date').value.trim();
+        const notes = document.getElementById('notes').value.trim();
+
+        const message =
+            `Booking request:%0A` +
+            `Name: ${name}%0A` +
+            `WhatsApp: ${phone}%0A` +
+            `Location: ${location}%0A` +
+            `Car type: ${carType}%0A` +
+            `Service: ${service}%0A` +
+            `Preferred day: ${date}%0A` +
+            `Notes: ${notes || 'N/A'}`;
+
+        window.open(`https://wa.me/447498972651?text=${message}`, '_blank');
+    });
+</script>
+
+</body>
+</html>
